@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Analytics Dashboard</h1>
+<canvas id="dailyDetectionsChart"></canvas>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+const ctx = document.getElementById('dailyDetectionsChart').getContext('2d');
+const dailyCounts = daily_counts;
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: Object.keys(dailyCounts),
+        datasets: [{
+            label: 'Daily Face Detections',
+            data: Object.values(dailyCounts),
+            backgroundColor: 'rgba(75, 192, 192, 0.6)'
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+</script>
+{% endblock %}
