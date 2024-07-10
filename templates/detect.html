@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Detect Faces</h1>
+<form id="detectForm">
+    <div class="mb-3">
+        <label for="image" class="form-label">Upload Image:</label>
+        <input type="file" class="form-control" id="image" name="image" accept="image/*" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Detect</button>
+</form>
+<div id="results" class="mt-4"></div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.getElementById('detectForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const response = await fetch('/detect', {
+        method: 'POST',
+        body: formData
+    });
+    const data = await response.json();
+    const resultsDiv = document.getElementById('results');
+    resultsDiv.innerHTML = '<h2>Detection Results:</h2>';
+    data.results.forEach(result => {
+        resultsDiv.innerHTML += `<p>Name: ${result.name}, Confidence: ${result.confidence}</p>`;
+    });
+});
+</script>
+{% endblock %}
