@@ -75,36 +75,6 @@ This project is an advanced face detection system implemented using FastAPI, Ope
 - `GET /logs`: View face detection logs
 - `GET /analytics`: View analytics dashboard
 
-## Project Structure
-
-```
-face_detection_system/
-│
-├── app/
-│   ├── __init__.py
-│   ├── main.py
-│   ├── models.py
-│   ├── schemas.py
-│   ├── database.py
-│   ├── crud.py
-│   └── face_detection.py
-│
-├── static/
-│   └── css/
-│       └── style.css
-│
-├── templates/
-│   ├── base.html
-│   ├── index.html
-│   ├── register.html
-│   ├── register_success.html
-│   ├── detect.html
-│   ├── logs.html
-│   └── analytics.html
-│
-├── requirements.txt
-└── README.md
-```
 
 ## Configuration
 
