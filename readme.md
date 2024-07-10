@@ -34,7 +34,7 @@ This project is an advanced face detection system implemented using FastAPI, Ope
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/advanced-face-detection-system.git
+   git clone https://github.com/kaviarasanmani/FaceDetection
    cd advanced-face-detection-system
    ```
 
