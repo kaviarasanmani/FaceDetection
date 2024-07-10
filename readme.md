@@ -138,5 +138,3 @@ This README provides a comprehensive overview of your project, including:
 11. License information
 12. Acknowledgments
 13. Contact information
-
-You can customize this README further based on your specific implementation details, additional features, or any other information you want to provide to users or potential contributors to your project.
